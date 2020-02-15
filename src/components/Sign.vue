@@ -23,7 +23,7 @@
         depressed
       >Log In</v-btn>
       <p v-show="incorrectData" class="error--text mt-2">
-        Login or password was entered incorrectly
+        Email or password was entered incorrectly
       </p>
       </v-col>
     </v-row>
@@ -31,7 +31,7 @@
 </template>
 <script>
 import database from '../assets/database.json';
-import LINKS from '../links/links'
+import {LINKS} from '../links/links'
 export default {
 name: 'Sign',
 data() {
@@ -62,12 +62,10 @@ methods: {
           });
           return promise;
         }
-
         
         this.loading = !this.loading
         const data = await getDatabase()
         this.loading = !this.loading
-        console.log('error', data)
         if(data.email === this.email && data.psw === this.psw) {
           sessionStorage.setItem('auth', data.secret)
           this.$router.push(LINKS.ALBUMS)

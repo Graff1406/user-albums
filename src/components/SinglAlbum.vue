@@ -44,7 +44,6 @@
                 </template>
                 <span>{{ image.info.caption }}</span>
               </v-tooltip>
-              
             </v-col>
           </v-row>
         </v-container>
@@ -53,14 +52,8 @@
   </v-row>
 </template>
 <script>
-  // import {LINKS} from '../links/links'
   export default {
     name: 'SinglAlbum',
-    data() {
-      return {
-        // image: `${this.$route.from.path}/${}`
-      }
-    },
     props: {
       albums: {
         type: Array,
@@ -71,13 +64,7 @@
       album() {
         const images = this.albums.find(item => item.id == this.$route.params.id)
         return images || []
-      },
-      // imageLink() {
-      //   return `${this.$route.from.path}/${album}`
-      // }
-    },
-    mounted() {
-      console.log(this.$route)
+      }
     }
   }
 </script>

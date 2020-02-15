@@ -76,7 +76,6 @@
             if (typeof FileReader === 'function') {
                 const reader = new FileReader()
                 reader.onload = event => {
-                console.log("LOG: readFiles -> event", event)
                   items.push({
                     src: event.target.result
                   })

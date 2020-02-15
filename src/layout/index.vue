@@ -153,7 +153,6 @@
     created() {
       const auth = sessionStorage.getItem('auth')
       if (auth) this.user = {...this.user, ...database}
-      console.log("LOG: created -> this.user", this.user)
     },
     methods: {     
       logout() {
